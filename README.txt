@@ -8,7 +8,7 @@ Start progect:
 		git;
 
 	clone repository:
-		git clone https://goodnesman@bitbucket.org/goodnesman/table-sorting-job-test.git
+		git clone https://github.com/nikadrenalin/table-sorting.git
 
 	start console on root directory and run:
 		npm install,
