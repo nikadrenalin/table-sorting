@@ -1,0 +1,39 @@
+
+<h1>Table sorting</h1>
+<table st-table="$ctrl.collection" st-safe-src="$ctrl.users" class="table table-striped">
+	<thead>
+	<tr>
+		<th st-sort="name">Name</th>
+		<th st-sort="username">Username</th>
+		<th st-sort="email">Email</th>
+		<th st-sort="address">Address</th>
+		<th st-sort="phone">Phone</th>
+	</tr>
+	<tr>
+		<th colspan="5">
+			<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in $ctrl.collection">
+		<td>{{row.name}}</td>
+		<td>{{row.username}}</td>
+		<td>
+			<button class="btn btn-sm" popover-placement="top" popover="{{row.email}}" type="button">
+				<i class="glyphicon glyphicon-eye-open"></i>
+			</button>
+			<a ng-href="mailto:{{row.email}}">email</a>
+		</td>
+		<td>{{row.address.city + ' ' + row.address.street + ' ' + row.address.zipcode}}</td>
+		<td>{{row.phone}}</td>
+	</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="5" class="text-center">
+				<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
